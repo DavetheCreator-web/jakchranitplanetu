@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekologické Tipy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4caf50;
+            margin-top: 50px;
+        }
+
+        .division {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .confirmation {
+            background-color: #4caf50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .error {
+            background-color: #f44336;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" style="text-align: left; text-decoration: none; color: #45a049; font-weight: 500; font-size: 20px; padding: 0; margin: 0;">zpátky</a>
+
+    <h1>Ekologické Tipy</h1>
+
+    <div class="division">
+        <h2>Poděl se o svůj tip!</h2>
+        <form id="tip-form">
+            <textarea id="tip" name="tip" rows="4" cols="50" placeholder="Napiš svůj ekologický tip..."></textarea><br><br>
+            <input type="submit" value="Odeslat">
+        </form>
+    </div>
+
+    <!-- Potvrzení odeslání -->
+    <div class="confirmation" id="confirmation">
+        <p>Děkujeme za váš tip! Pomáháte chránit naši planetu!</p>
+    </div>
+
+    <!-- Chyba, pokud není vyplněno -->
+    <div class="error" id="error">
+        <p>Prosím, napiš svůj ekologický tip před odesláním!</p>
+    </div>
+
+    <script>
+        // Získání elementů
+        const form = document.getElementById('tip-form');
+        const tipInput = document.getElementById('tip');
+        const confirmation = document.getElementById('confirmation');
+        const error = document.getElementById('error');
+
+        // Zpracování odeslání formuláře
+        form.onsubmit = function(event) {
+            event.preventDefault();  // Zabráníme defaultnímu odeslání formuláře
+
+            const userTip = tipInput.value.trim();  // Získáme hodnotu z textového pole
+
+            if (userTip === "") {
+                // Zobrazení chyby
+                error.style.display = "block";
+                confirmation.style.display = "none";  // Skrytí potvrzení
+                return;
+            }
+
+            // Odeslání dat na server (používáme AJAX)
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "odeslat.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    // Po úspěšném odeslání se zobrazí potvrzení
+                    error.style.display = "none";
+                    confirmation.style.display = "block";
+                    tipInput.value = "";  // Vymaže textové pole
+                }
+            };
+            xhr.send("tip=" + encodeURIComponent(userTip));  // Odeslání dat
+
+            // Skrytí chyby a zobrazení potvrzení
+            error.style.display = "none";
+            confirmation.style.display = "block";
+        };
+    </script>
+
+</body>
+</html>

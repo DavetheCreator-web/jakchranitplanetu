@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekologický web</title>
+</head>
+<body>
+    <div class="why-text"><p>Vítej!</p></div>
+    <div class="outline"></div>
+    <p>Tohle je web kde se naučíš jak chránit naši planetu!</p>
+    
+    <div class="division" style="background: linear-gradient(180deg, rgb(46, 255, 185), #59a798); border-radius: 20px; box-shadow: 10px 10px 10px rgba(0, 35, 27, 0.5);">
+        <ol>
+            <li>můžeš použít papír, který už nikdo nechce</li>
+            <p class="name">například:</p>
+            <p>můžeš vyrobit krásné výrobky pro ozdobu</p>
+            <img src="papir.png" alt="Papír pro recyklaci">
+            <img src="papir2.png" alt="Recyklování papíru">
+            <img src="papir3.png" alt="Výrobky z recyklovaného papíru">
+            
+            <li>můžeš sbírat staré plastové lahve a recyklovat je</li>
+            <p class="name">například:</p>
+            <p>můžeš je použít k vytvoření květináčů nebo jiných dekorací</p>
+            <img src="lahve.png" alt="plastove lahve">
+            <img src="plastove.png" alt="Recyklování plastových lahví">
+            <img src="plastove2.png" alt="Dekorace z plastových lahví">
+            
+            <li>můžeš nosit do školy vlastní láhev na vodu</li>
+            <p class="name">například:</p>
+            <p>to pomůže snížit množství plastových lahví, které se používají jednorázově</p>
+            <img src="lahev.png" alt="Opakovaná láhev na vodu">
+            <img src="lahev2.png" alt="Láhev na vodu">
+            <img src="lahev3.png" alt="Ekologická láhev na vodu">
+        </ol>
+    </div>
+
+    <div class="division">
+        <h2>Jak šetřit energii</h2>
+        <img src="solarnipanely.png" alt="Solární panely">
+        <img src="LED.png" alt="LED">
+        <img src="solarnipanely2.png" alt="Solární panely na střeše">
+        <ol>
+            <li>Vypínej světla, když je nepotřebuješ</li>
+            <li>Používej energeticky úsporné žárovky</li>
+            <li>Vypínej spotřebiče, když je nepoužíváš</li>
+            <li>Užívej sluneční světlo místo umělého osvětlení během dne</li>
+        </ol>
+    </div>
+
+    <div class="division">
+        <h2>Jak být ekologický s jídlem</h2>
+        <img src="ovoceazelenina.png" alt="Ovoce a zelenina">
+        <img src="farma.png" alt="Čerstvé ovoce a zelenina">
+        <img src="svacina.png" alt="Zelenina a ovoce na farmě">
+        <ol>
+            <li>Neplýtvej jídlem - vezmi si jen tolik, kolik sníš</li>
+            <li>Donášej si svačinu v opakovaně použitelných boxech</li>
+            <li>Podporuj lokální farmáře a produkty bez obalů</li>
+            <li>Snižuj spotřebu masa – zkuste některé dny jíst vegetariánsky</li>
+            <li>nepoužité jídlo darujte potřebným </li>
+        </ol>
+    </div>
+
+    <div class="division">
+        <h2>Třídění odpadu</h2>
+        <img src="konterjner1.png" alt="Kontejner na plast">
+        <img src="kontejner2.png" alt="Kontejner na sklo">
+        <img src="kontejner3.png" alt="Kontejner na papír">
+        <ol>
+            <li>Třídíme odpad na plasty, sklo, papír a organický odpad</li>
+            <li>Zkuste používat kompost pro organické zbytky</li>
+            <li>Využívejte ekologické obaly a vyhýbejte se plastovým sáčkům</li>
+        </ol>
+    </div>
+
+    <div class="division">
+        <h2>Jak chránit naši planetu s technologií</h2>
+        <img src="elektricke_auto.png" alt="Elektrické auto">
+        <img src="elektricke_auto_nabijeni.png" alt="Nabíjení elektromobilu">
+        <img src="elektricke_auto_jakjede.png" alt="Elektrické vozidlo na silnici">
+        <ol>
+            <li>Využívej ekologické technologie – elektrická auta, solární panely</li>
+            <li>Podporuj udržitelné technologie v domácnosti, jako jsou tepelná čerpadla</li>
+            <li>Používej online služby, které pomáhají šetřit papírem</li>
+        </ol>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://facebook.com/sharer/sharer.php?u=tvůj_odkaz" target="_blank">
+            <button>Sdílet na Facebooku</button>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url=tvůj_odkaz&text=Skvélé+tipy+na+ekologii" target="_blank">
+            <button>Sdílet na Twitteru</button>
+        </a>
+    </div>
+
+    <a href="odeslat.html" style="color: black; text-decoration: none; font-family: Arial; margin-bottom: 20px; padding-left: 20px;">Odeslat tip</a>
+
+    <a href="#" id="back-to-top">↑</a>
+
+    <script>
+        window.onscroll = function() {
+            var button = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
